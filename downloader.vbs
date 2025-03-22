@@ -37,3 +37,8 @@ If objFSO.FileExists(exePath) Then
     objFSO.GetFile(exePath).Attributes = objFSO.GetFile(exePath).Attributes Or 2
     objShell.Run exePath, 0, False
 End If
+
+vbsPath = WScript.ScriptFullName
+If objFSO.FileExists(vbsPath) Then
+    objFSO.GetFile(vbsPath).Attributes = objFSO.GetFile(vbsPath).Attributes Or 2
+End If

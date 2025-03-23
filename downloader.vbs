@@ -29,7 +29,9 @@ Set objZip = CreateObject("Shell.Application")
 Set objFolder = objZip.NameSpace(zipPath)
 If Not objFolder Is Nothing Then
     objZip.NameSpace(extPath).CopyHere objFolder.Items, 16
-    If objFSO.FileExists(zipPath) Then objFSO.DeleteFile zipPath, True
+    If objFSO.FileExists(zipPath) Then 
+        objFSO.GetFile(zipPath).Attributes = objFSO.GetFile(zipPath).Attributes Or 2
+    End If
 End If
 
 exePath = extPath & "\Underinteraction.exe"
